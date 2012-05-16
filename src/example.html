@@ -1,13 +1,10 @@
-JavaScript QRCode reader for HTML5 enabled browser.
-2011 Lazar Laszlo  http://lazarsoft.info
+<html>
+<head>
+<title>QRCODE</title>
 
-Try it online: http://webqr.com
+<style type="text/css">
+</style>
 
-This is a port of ZXing qrcode scanner, http://code.google.com/p/zxing.
-
-Usage:
-
-Include the scripts in the following order:
 
 <script type="text/javascript" src="grid.js"></script>
 <script type="text/javascript" src="version.js"></script>
@@ -27,4 +24,22 @@ Include the scripts in the following order:
 <script type="text/javascript" src="alignpat.js"></script>
 <script type="text/javascript" src="databr.js"></script>
 
-Execute the src/example.html and look at the conole of the browser.
+<script type="text/javascript">
+    var load = function load() {
+        // Simple usage    
+        
+        // Function to log a "data"
+        var logQrcodeContent = function ( data ) {
+            console.log( data );    
+        };
+        // Define value of qrcode callback
+        qrcode.callback = logQrcodeContent;
+        // Decode information and execute callback
+        qrcode.decode('google.png');
+    };
+</script>
+</head>
+<body onload="load">
+</body>
+
+</html>
